@@ -16,13 +16,40 @@
 /* eslint-disable */
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+  // apiKey: "AIzaSyA7yUki_N0wMdGARmNGLo7FNUC_vJBCCbE",
+  // authDomain: "my-5th-firebase.firebaseapp.com",
+  // projectId: "my-5th-firebase",
+  // storageBucket: "my-5th-firebase.appspot.com",
+  // messagingSenderId: "422446364504",
+  // appId: "1:422446364504:web:1f6ae22c8417b3f5c8d72d",
+  // measurementId: "G-Z2KZVDTWCF"
+// };
+
+// Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
+import firebase from 'firebase/app'
+// import firebase from 'firebase/compat/app'
+// import firebase from 'firebase'
+
+// import firebase from '@/plugins/firebase'
+// import firebase from '~/plugins/firebase'
+// import * as firebase from "firebase/app"
+// import '@/plugins/firebase'
+import "firebase/functions"
+// import "firebase-functions"
+// import 'firebase/auth'
+// import { https } from "firebase/functions"
+// import { getFunctions, httpsCallable } from "firebase/functions";
 const firebaseConfig = {
   apiKey: "AIzaSyA7yUki_N0wMdGARmNGLo7FNUC_vJBCCbE",
   authDomain: "my-5th-firebase.firebaseapp.com",
@@ -32,22 +59,9 @@ const firebaseConfig = {
   appId: "1:422446364504:web:1f6ae22c8417b3f5c8d72d",
   measurementId: "G-Z2KZVDTWCF"
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-
-// import firebase from 'firebase/app'
-// import firebase from 'firebase/compat/app'
-// import firebase from 'firebase'
-
-// import firebase from '@/plugins/firebase'
-// import firebase from '~/plugins/firebase'
-// import * as firebase from "firebase/app"
-// import '@/plugins/firebase'
-// import "firebase/functions"
-// import { https } from "firebase/functions"
-import { getFunctions, httpsCallable } from "firebase/functions";
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig)
+}
 export default {
   name: 'HelloPage',
   data () {
@@ -59,11 +73,12 @@ export default {
     helloworld () {
       // const functions = firebase.functions('asia-northeast1');
       // const functions = firebase.functions();
-      const functions = getFunctions(app, 'asia-northeast1');
+      // const functions = getFunctions(app, 'asia-northeast1');
       // const functions = firebase.app().functions();
+      const functions = firebase.app().functions('asia-northeast1');
       // const functions = app.functions;
-      // const func = functions.httpsCallable("helloWorld");
-      const func = httpsCallable(functions, "helloWorld");
+      const func = functions.httpsCallable("helloWorld");
+      // const func = httpsCallable(functions, "helloWorld");
       func({name: this.name})
         .then((result) => {
           console.log(result)

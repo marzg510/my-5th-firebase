@@ -1,7 +1,7 @@
 /* eslint-disable */
 // import firebase from 'firebase/compat/app'
 // import firebase from 'firebase'
-// import firebase from 'firebase/app'
+import firebase from 'firebase/app'
 // import 'firebase/auth'
 // import 'firebase/analytics'
 // import 'firebase/firestore'
@@ -17,18 +17,18 @@ const firebaseConfig = {
   measurementId: "G-Z2KZVDTWCF"
 };
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
-// if (!firebase.apps.length) {
-  // firebase.initializeApp(firebaseConfig)
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig)
   // const app = initializeApp(firebaseConfig);
   // const analytics = getAnalytics(app);
   // firebase.analytics()
-// }
+}
 
 // export const authProviders = {
   // 使うものだけ定義しておきましょう
@@ -38,6 +38,6 @@ const app = initializeApp(firebaseConfig);
   // Twitter: firebase.auth.TwitterAuthProvider.PROVIDER_ID,
   // Github: firebase.auth.GithubAuthProvider.PROVIDER_ID
 // }
-// export default firebase
+export default firebase
 
 
