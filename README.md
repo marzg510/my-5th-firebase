@@ -3,8 +3,11 @@
 ## Node Version
 
 ```
+$ nvm use lts/erbium
+Now using node v12.22.10 (npm v6.14.16)
 $ node -v
-v16.13.1
+v12.22.10
+$ node -v > .nvmrc
 ```
 
 ## Web App
@@ -20,12 +23,18 @@ create-nuxt-app v4.0.0
 ? UI framework: Bootstrap Vue
 ? Nuxt.js modules: Progressive Web App (PWA)
 ? Linting tools: ESLint
-? Testing framework: Jest
+? Testing framework: None
 ? Rendering mode: Single Page App
 ? Deployment target: Server (Node.js hosting)
 ? Development tools: jsconfig.json (Recommended for VS Code if you're not using typescript)
 ? Continuous integration: None
 ? Version control system: Git
+```
+
+```
+cd MyApp
+node -v
+npm run dev
 ```
 
 ## Create New Firebase Project
@@ -49,16 +58,19 @@ git push -u origin main
 
 ## Install firebase
 
-```
-cd MyApp
-npm install firebase
-npm install @nuxtjs/firebase --save
+```bash
+$ cd MyApp
+# edit package.json
+...
+  "dependencies": {
+    "firebase": "^8.9.1",
+    "firebase-functions": "^3.11.0",
+  }
+...
 
-```
+$ npm install firebase
+$ npm install @nuxtjs/firebase --save
 
-
-```
-npm run dev
 ```
 
 ## init firebase
