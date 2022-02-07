@@ -145,7 +145,7 @@ npm run dev
 
 ```bash
 $ npm run generate
-$ firebase deploy
+$ npx firebase deploy
 ...
 Project Console: https://console.firebase.google.com/project/my-5th-firebase/overview
 Hosting URL: https://my-5th-firebase.web.app

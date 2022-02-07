@@ -40,11 +40,11 @@ export default {
       const dummy = { test: "hello" }
       const functions = firebase.app().functions('asia-northeast1');
       const func = functions.httpsCallable("helloWorld");
-      func({name: this.name})
+      func({ name: this.name })
         .then((result) => {
           console.log(dummy.test)
           console.log(result)
-          alert(result.data.msg)
+          alert("reply:" + result.data.msg)
           // alert("yeah")
         })
         .catch((error) => {
