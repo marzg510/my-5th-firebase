@@ -50,6 +50,7 @@ Firebase Console
 
 ## Push to GitHub
 ```
+cd ..
 git init
 git remote add origin https://github.com/marzg510/my-5th-firebase.git
 git branch -M main
@@ -58,42 +59,34 @@ git push -u origin main
 
 ## Install firebase
 
-```bash
-$ cd MyApp
-# edit package.json
-...
+### edit package.json
+
+```
   "dependencies": {
+...
+    "@nuxtjs/firebase": "^8.2.2",
     "firebase": "^8.9.1",
     "firebase-functions": "^3.11.0",
-  }
 ...
+  }
+```
 
-$ npm install firebase
-$ npm install @nuxtjs/firebase --save
+```bash
+$ npm install --save-dev firebase-tools
+$ npm install
 
 ```
 
 ## init firebase
 
-nuxt.config.js
-```
-  generate: {
-    dir: 'public'
-  },
-
-```
-
 ```bash
-npm run generate
-```
-
-```bash
-$ firebase init
+$ npx firebase login
+$ npx firebase init
 ...
   * You are currently outside your home directory
 
-? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. Functions: Configure a Cloud Functions directory and its fi
-les, Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. 
+Functions: Configure a Cloud Functions directory and its files, Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
 
 === Project Setup
 
@@ -135,7 +128,7 @@ Your public directory is the folder (relative to your project directory) that
 will contain Hosting assets to be uploaded with firebase deploy. If you
 have a build process for your assets, use your build's output directory.
 
-? What do you want to use as your public directory? public
+? What do you want to use as your public directory? dist
 ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
 ? Set up automatic builds and deploys with GitHub? No
 ✔  Wrote public/index.html
@@ -144,13 +137,14 @@ have a build process for your assets, use your build's output directory.
 ```
 
 
-## 確認
+## 確認&デプロイ
 
 ```
 npm run dev
 ```
 
-```
+```bash
+$ npm run generate
 $ firebase deploy
 ...
 Project Console: https://console.firebase.google.com/project/my-5th-firebase/overview
