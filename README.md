@@ -151,9 +151,27 @@ Project Console: https://console.firebase.google.com/project/my-5th-firebase/ove
 Hosting URL: https://my-5th-firebase.web.app
 ```
 
-## デプロイ
+## Auth
+
+- https://qiita.com/Yuta_Fujiwara/items/3c57c99399891ae3ff38
+
+### 設定
+
+Firebase Console
+  -> Authentication
+    -> Sign-in method
+      -> Googleを有効にする
+        -> 保存
+  -> Firestore Database
+    -> データベースを作成
+      -> 本番環境
+        -> ロケーション:asia-northeast1
+          -> 有効にする
+  -> Storage
+
+### 確認
 
 ```
-npm run generate
-firebase deploy
+npm run build
+npm run dev
 ```
