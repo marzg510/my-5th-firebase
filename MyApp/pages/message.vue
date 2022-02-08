@@ -22,8 +22,8 @@
         <tbody>
           <tr v-for="message in messages" :key="message.id">
             <td>{{ message.id }}</td>
-            <td>{{ message.data.name }}</td>
-            <td>{{ message.data.content }}</td>
+            <td>{{ message.data().name }}</td>
+            <td>{{ message.data().content }}</td>
           </tr>
         </tbody>
       </table>
@@ -91,9 +91,12 @@ async function getAllDocs(collection) {
   var obj = [];
   var colRef = firebase.firestore().collection(collection)
   const allSnapShot = await colRef.get();
-  allSnapShot.forEach(doc => {
-    obj.push({ id: doc.id, data: doc.data() })
+  return allSnapShot.docs.map(doc => {
+    return doc
   })
-  return obj
+  // allSnapShot.forEach(doc => {
+    // obj.push({ id: doc.id, data: doc.data() })
+  // })
+  // return obj
 }
 </script>
