@@ -215,3 +215,32 @@ message.vue
 
 
 ## functionsのローカル実行
+
+- https://firebase.google.com/docs/functions/local-emulator?hl=ja
+
+```
+export GOOGLE_APPLICATION_CREDENTIALS="../my-5th-firebase-99c5998b0cb7.json"
+npx firebase emulators:start
+npx firebase emulators:start --only functions
+```
+
+
+```
+$ npx firebase init emulators
+...
+
+=== Emulators Setup
+? Which Firebase emulators do you want to set up? Press Space to select emulators, then Enter to confirm your choices. Functions Emulator, Firestore Emulator, Hosting Emulator
+? Which port do you want to use for the functions emulator? 5001
+? Which port do you want to use for the firestore emulator? 8080
+? Which port do you want to use for the hosting emulator? 5000
+? Would you like to enable the Emulator UI? Yes
+? Which port do you want to use for the Emulator UI (leave empty to use any available port)? 
+? Would you like to download the emulators now? Yes
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
+✔  Firebase initialization complete!
+
+```

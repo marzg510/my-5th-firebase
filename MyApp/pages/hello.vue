@@ -27,6 +27,7 @@ export default {
   methods: {
     helloworld () {
       const functions = firebase.app().functions('asia-northeast1');
+      firebase.app().functions('asia-northeast1').useEmulator("localhost", 5001);
       const func = functions.httpsCallable("helloWorld");
       func({ name: this.name })
         .then((result) => {
