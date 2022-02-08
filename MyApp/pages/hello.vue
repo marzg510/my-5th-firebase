@@ -18,6 +18,7 @@ import firebase from '@/plugins/firebase'
 import "firebase/functions"
 export default {
   name: 'HelloPage',
+  middleware: 'authenticated', // ここでmiddlewareを指定しています。
   data () {
     return {
       name: ''

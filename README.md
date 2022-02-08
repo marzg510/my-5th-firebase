@@ -185,3 +185,22 @@ package.json
 npm run build
 npm run dev
 ```
+
+### ミドルウェア
+
+- https://su-kun1899.hatenablog.com/entry/2018/06/19/200000
+
+middleware/
+
+### レイアウト
+
+layouts/
+
+
+### ページごとにログイン確認
+
+```
+export default {
+  layout: 'protected',
+}
+```
