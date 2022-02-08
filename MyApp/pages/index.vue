@@ -4,6 +4,7 @@
     <ul id="menu">
       <li v-if="authenticated === false"><nuxt-link to="/login">Sign In</nuxt-link></li>
       <li><nuxt-link to="/hello">Hello</nuxt-link></li>
+      <li><nuxt-link to="/message">Post Message</nuxt-link></li>
       <li><nuxt-link to="/tutorial">Tutorial</nuxt-link></li>
       <li><nuxt-link to="/logout">Sign Out</nuxt-link></li>
     </ul>

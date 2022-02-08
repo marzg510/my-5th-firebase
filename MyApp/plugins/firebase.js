@@ -2,7 +2,7 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/analytics'
-// import 'firebase/firestore'
+import 'firebase/firestore'
 // import { firebaseConfig } from './firebaseProd'
 // import { firebaseConfig } from './firebaseDev'
 const firebaseConfig = {
@@ -19,6 +19,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig)
   firebase.analytics()
 }
+const db = firebase.firestore()
 
 export const authProviders = {
   // 使うものだけ定義しておきましょう
@@ -29,5 +30,5 @@ export const authProviders = {
   // Github: firebase.auth.GithubAuthProvider.PROVIDER_ID
 }
 export default firebase
-
+export { db }
 

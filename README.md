@@ -196,11 +196,22 @@ middleware/
 
 layouts/
 
+使わなかった
 
 ### ページごとにログイン確認
 
 ```
-export default {
-  layout: 'protected',
-}
+  middleware: 'authenticated', // ここでmiddlewareを指定しています。
 ```
+
+### Firestore
+
+ルール
+```
+	    allow read, write: if request.auth != null;
+```
+
+message.vue
+
+
+## functionsのローカル実行
